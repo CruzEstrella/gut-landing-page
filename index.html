@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu intestino vive te sabotando? | Plano Alimentar Personalizado</title>
+    <meta name="description" content="Sistema inteligente que analisa seus sintomas de SII e entrega rotina alimentar personalizada baseada na dieta Low FODMAP">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <h1>Seu intestino vive te sabotando? Descubra o que comer para aliviar os sintomas agora mesmo</h1>
+            <p>Nosso sistema inteligente analisa seus sintomas e te entrega uma rotina alimentar personalizada com base na dieta Low FODMAP</p>
+            <a href="#cta-final" class="button" onclick="smoothScroll('#cta-final')">Quero receber minhas sugestões</a>
+        </div>
+    </header>
+
+    <section class="benefits">
+        <div class="container">
+            <h2>Benefícios para você</h2>
+            <div class="benefit-items">
+                <div class="benefit-item">
+                    <h3>✨ Personalização imediata</h3>
+                    <p>Baseada nos seus sintomas específicos, para resultados rápidos e eficazes.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>🎯 Sugestões alinhadas à sua rotina</h3>
+                    <p>Adaptação perfeita ao seu dia a dia, preferências e estilo de vida.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>🔬 Método natural e científico</h3>
+                    <p>Comprovado para reduzir inchaço, dor e desregulação intestinal.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>🌱 Primeiros passos para o alívio</h3>
+                    <p>Comece a sentir a diferença desde o primeiro dia de aplicação.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial">
+        <div class="container">
+            <div class="testimonial-content">
+                <img src="images/image.png" alt="Mariana" class="testimonial-image">
+                <blockquote>
+                    Sofria com dores todos os dias e não sabia mais o que comer. Em 3 dias de seguir o plano que recebi aqui, meu intestino começou a responder! Me senti aliviada e finalmente entendi o que funcionava pra mim.
+                    <footer>— Mariana, 37 anos</footer>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <div class="container">
+            <h2>Como funciona?</h2>
+            <div class="steps">
+                <div class="step-item">
+                    <p><strong>1. Responda 3 perguntas rápidas</strong> sobre sua alimentação e sintomas específicos.</p>
+                </div>
+                <div class="step-item">
+                    <p><strong>2. Nosso agente inteligente</strong> analisa seus dados de forma inteligente e personalizada.</p>
+                </div>
+                <div class="step-item">
+                    <p><strong>3. Receba orientações personalizadas</strong> de alimentação, horários e receitas baseadas na dieta Low FODMAP.</p>
+                </div>
+                <div class="step-item">
+                    <p>Tudo isso com <strong>acesso completo por 6 meses</strong> especialmente para você!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-final" id="cta-final">
+        <div class="container">
+            <h2>Você já tentou de tudo e ainda sente seu intestino reagindo mal?</h2>
+            <p>Talvez o que falta é um plano realmente feito pra você. Comece agora.</p>
+            <a href="https://pay.kiwify.com.br/pcy2Rhi" class="button" target="_blank">Quero meu plano alimentar personalizado agora</a>
+            <p class="disclaimer">✅ 7 dias para devolução do produto | 🔒 Acesso GUT por 6 meses</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Todos os direitos reservados. | Plano Alimentar Personalizado para SII</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling function
+        function smoothScroll(target) {
+            event.preventDefault();
+            document.querySelector(target).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const animateElements = document.querySelectorAll('.benefit-item, .step-item');
+            animateElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.6s ease';
+                observer.observe(el);
+            });
+        });
+
+        // Button hover effects
+        document.querySelectorAll('.button').forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                button.style.transform = 'translateY(-3px) scale(1.05)';
+            });
+            
+            button.addEventListener('mouseleave', () => {
+                button.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
+
